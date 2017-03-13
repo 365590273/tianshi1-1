@@ -10,9 +10,9 @@ $(function () {
 
 
     function getData() {
-        var getMsg = window.location.search.slice(1);
-        var reg = /=([a-zA-Z0-9]+)/;
-        var match = reg.exec(getMsg)[1];
+        let getMsg = window.location.search.slice(1);
+        let reg = /=([a-zA-Z0-9]+)/;
+        let match = reg.exec(getMsg)[1];
         console.log(match);
 
         $.ajax({
@@ -21,7 +21,7 @@ $(function () {
             datatype: 'json',
             success: function (info) {
                 console.log(info);
-                var html = template('template', info);
+                let html = template('template', info);
                 $('.container').append(html);
             }
         });

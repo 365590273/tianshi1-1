@@ -8,7 +8,7 @@ $(function () {
     /*���ú���*/
     getData();
 
-    //var
+    //let
     /*��ȡ����*/
 
     function getData() {
@@ -18,22 +18,22 @@ $(function () {
             dataType: 'json',
             success: function (info) {
                 console.log(info);
-                var html = template("menuTpl", info)
+                let html = template("menuTpl", info)
                 //console.log(html);
 
                 $(".nav.nav-tabs").html(html);
 
                 //console.log($('.nav.nav-tabs>li').data('titleid'));
-                var html2 = template('tabPanTpl', info);
+                let html2 = template('tabPanTpl', info);
                 //console.log(html2);
                 $(".tab-content").html(html2);
                 initTab();
 
                 $('.tab-content ul').each(function (i, v) {
-                    //var $box = $(".tab-content ul");
+                    //let $box = $(".tab-content ul");
                     // console.log(v);
-                    var $ul = $(v);
-                    var title = $(v).data('titleid');
+                    let $ul = $(v);
+                    let title = $(v).data('titleid');
                     // console.log($box);
                       console.log(title);
 
@@ -43,7 +43,7 @@ $(function () {
                         dataType: 'json',
                         success: function (info) {
                             // console.log(info);
-                            var html = template("menuTpl1", info)
+                            let html = template("menuTpl1", info)
 
                             //console.log(html);
                             $ul.html(html);
@@ -58,42 +58,42 @@ $(function () {
 });
 
 function initTab() {
-    var parentBox = document.querySelector('.slide');
-    var childBox = parentBox.querySelector('ul');
-    var parentBoxWidth = parentBox.offsetWidth;
-    var childBoxWidth = childBox.offsetWidth;
+    let parentBox = document.querySelector('.slide');
+    let childBox = parentBox.querySelector('ul');
+    let parentBoxWidth = parentBox.offsetWidth;
+    let childBoxWidth = childBox.offsetWidth;
     //console.log(parentBoxWidth);
     console.log(childBoxWidth);
-    var maxX = 0;
-    var minX = parentBoxWidth -childBoxWidth;
+    let maxX = 0;
+    let minX = parentBoxWidth -childBoxWidth;
     //console.log(maxX);
-    var distance = 100;
-    var maxSwipt = maxX + distance;
-    var minSwipt = minX - distance;
+    let distance = 100;
+    let maxSwipt = maxX + distance;
+    let minSwipt = minX - distance;
     console.log(minSwipt);
 //��һ��  1 �ò˵���������
-    var startX = 0;
-    var moveX = 0;
-    var distanceX = 0;
-    var isMove = false;
+    let startX = 0;
+    let moveX = 0;
+    let distanceX = 0;
+    let isMove = false;
 
-    var currX = 0;//��¼��ǰ��λ
+    let currX = 0;//��¼��ǰ��λ
 
     //���幫�÷���
     /*��ӹ���*/
-    var addTransition = function () {
+    let addTransition = function () {
         childBox.style.webkitTransition = "all .2s";
         /*����*/
         childBox.style.transition = "all .2s";
     }
     /*ɾ������*/
-    var removeTransition = function () {
+    let removeTransition = function () {
         childBox.style.webkitTransition = "none";
         /*����*/
         childBox.style.transition = "none";
     }
     /*���ö�λ*/
-    var setTranslateX = function (x) {
+    let setTranslateX = function (x) {
         childBox.style.webkitTransform = "translateX(" + x + "px)";
         childBox.style.transform = "translateX(" + x + "px)";
     }

@@ -21,42 +21,42 @@ window.onload = function () {
 
 
 function initTab() {
-    var parentBox = document.querySelector('.slide');
-    var childBox = parentBox.querySelector('ul');
-    var parentBoxWidth = parentBox.offsetWidth;
-    var childBoxWidth = childBox.offsetWidth;
+    let parentBox = document.querySelector('.slide');
+    let childBox = parentBox.querySelector('ul');
+    let parentBoxWidth = parentBox.offsetWidth;
+    let childBoxWidth = childBox.offsetWidth;
     console.log(parentBoxWidth);
     console.log(childBoxWidth);
-    var maxX = 0;
-    var minX = parentBoxWidth -childBoxWidth;
+    let maxX = 0;
+    let minX = parentBoxWidth -childBoxWidth;
     //console.log(maxX);
-    var distance = 100;
-    var maxSwipt = maxX + distance;
-    var minSwipt = minX - distance;
+    let distance = 100;
+    let maxSwipt = maxX + distance;
+    let minSwipt = minX - distance;
     console.log(minSwipt);
 //第一步  1 让菜单滑动起来
-    var startX = 0;
-    var moveX = 0;
-    var distanceX = 0;
-    var isMove = false;
+    let startX = 0;
+    let moveX = 0;
+    let distanceX = 0;
+    let isMove = false;
 
-    var currX = 0;//记录当前定位
+    let currX = 0;//记录当前定位
 
     //定义公用方法
     /*添加过度*/
-    var addTransition = function () {
+    let addTransition = function () {
         childBox.style.webkitTransition = "all .2s";
         /*兼容*/
         childBox.style.transition = "all .2s";
     }
     /*删除过度*/
-    var removeTransition = function () {
+    let removeTransition = function () {
         childBox.style.webkitTransition = "none";
         /*兼容*/
         childBox.style.transition = "none";
     }
     /*设置定位*/
-    var setTranslateX = function (x) {
+    let setTranslateX = function (x) {
         childBox.style.webkitTransform = "translateX(" + x + "px)";
         childBox.style.transform = "translateX(" + x + "px)";
     }

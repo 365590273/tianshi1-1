@@ -12,7 +12,7 @@ $(function () {
     function toTop() {
         $(".toTop").fadeOut();
         $(window).scroll(function () {
-            var scrollValue = $(window).scrollTop();
+            let scrollValue = $(window).scrollTop();
             scrollValue > 100 ? $(".toTop").fadeIn() : $(".toTop").fadeOut();
         })
         $(".returnTop").click(function () {

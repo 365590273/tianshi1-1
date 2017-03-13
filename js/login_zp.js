@@ -29,10 +29,10 @@ $(function(){
 
 // 验证用户名的函数
     function checkeusername(username){
-        var str=username;
+        let str=username;
         // 验证用户名是否由3-10位的字母、数字和下划线组成的正则表达式如下：
-        var Expression=/^(\w){3,10}$/;
-        var objExp=new RegExp(Expression); //创建正则表达式对象
+        let Expression=/^(\w){3,10}$/;
+        let objExp=new RegExp(Expression); //创建正则表达式对象
         if(objExp.test(str)==true){ //通过正则表达式验证
             return true;
         }else{
@@ -42,10 +42,10 @@ $(function(){
 });
 // 验证密码的函数
 function checkePWD(PWD){
-    var str=PWD;
+    let str=PWD;
     // 密码是由6-20位数字,英语字母,符号随意组成；
-    var Expression=/^[\w.]{6,20}$/;
-    var objExp=new RegExp(Expression); //创建正则表达式对象
+    let Expression=/^[\w.]{6,20}$/;
+    let objExp=new RegExp(Expression); //创建正则表达式对象
     if(objExp.test(str)==true){ //通过正则表达式验证
         return true;
     }else{
